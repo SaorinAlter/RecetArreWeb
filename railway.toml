@@ -5,4 +5,4 @@ builder = "nixpacks"
 startCommand = "dotnet out/RecetArreWeb.dll --urls http://0.0.0.0:$PORT"
 
 [build.env]
-NIXPACKS_BUILD_CMD = "dotnet publish -c Release -o out"
+NIXPACKS_BUILD_CMD = "dotnet restore && dotnet publish -c Release -o out"
