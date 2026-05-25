@@ -3,3 +3,4 @@ builder = "nixpacks"
 
 [build.env]
 NIXPACKS_BUILD_CMD = "dotnet publish -c Release -o out"
+DOTNET_VERSION = "8.0"
