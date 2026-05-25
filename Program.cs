@@ -20,7 +20,7 @@ builder.Services.AddScoped(sp =>
     
     var httpClient = new HttpClient(handler)
     {
-        BaseAddress = new Uri("http://localhost:5068/")
+        BaseAddress = new Uri("http://CuandoHarryConocioaSally.somee.com/")
     };
     
     return httpClient;
