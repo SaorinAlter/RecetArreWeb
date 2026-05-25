@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RecetArreWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9e5e09117ca205a92a4374533b520705ebc83d9c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6ca9e5e22c71d1876cd1d1a8d9f3f88c781de2d")]
 [assembly: System.Reflection.AssemblyProductAttribute("RecetArreWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RecetArreWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
