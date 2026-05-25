@@ -1,0 +1,56 @@
+@page "/ranking"
+@inject HttpClient Http
+
+<h1>RANKING DE RECETAS</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h4>Mejores recetas globales</h4>
+        @if (globales != null)
+        {
+            <ol>
+                @foreach (var r in globales)
+                {
+                    <li>
+                        <a href="/recetas/@r.Id">@r.Titulo</a>
+                        <span>⭐ @r.Promedio.ToString("0.0") (@r.Total valoraciones)</span>
+                    </li>
+                }
+            </ol>
+        }
+    </div>
+    <div class="col-md-6">
+        <h4>Mejores recetas de hoy</h4>
+        @if (diarias != null)
+        {
+            <ol>
+                @foreach (var r in diarias)
+                {
+                    <li>
+                        <a href="/recetas/@r.Id">@r.Titulo</a>
+                        <span>⭐ @r.Promedio.ToString("0.0") (@r.Total valoraciones)</span>
+                    </li>
+                }
+            </ol>
+        }
+    </div>
+</div>
+
+@code {
+    private List<RankingItem>? globales;
+    private List<RankingItem>? diarias;
+
+    protected override async Task OnInitializedAsync()
+    {
+        globales = await Http.GetFromJsonAsync<List<RankingItem>>("api/rankings/top?cantidad=10");
+        diarias = await Http.GetFromJsonAsync<List<RankingItem>>("api/rankings/diarias?cantidad=5");
+    }
+
+    public class RankingItem
+    {
+        public int Id { get; set; }
+        public string Titulo { get; set; } = "";
+        public double Promedio { get; set; }
+        public int Total { get; set; }
+    }
+}
