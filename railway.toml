@@ -2,7 +2,7 @@
 builder = "nixpacks"
 
 [deploy]
-startCommand = "ls out/ && dotnet out/RecetArreWeb.dll --urls http://0.0.0.0:$PORT"
+startCommand = "npx serve out/wwwroot -l $PORT"
 
 [build.env]
 NIXPACKS_BUILD_CMD = "dotnet restore && dotnet publish -c Release -o out"
