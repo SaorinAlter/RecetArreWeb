@@ -3,6 +3,3 @@ builder = "nixpacks"
 
 [deploy]
 startCommand = "npx serve out/wwwroot -l $PORT"
-
-[build.env]
-NIXPACKS_BUILD_CMD = "dotnet restore && dotnet publish -c Release -o out"
